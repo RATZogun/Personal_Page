@@ -228,10 +228,17 @@ header[id] {
 }
 
 .foto-perfil {
-  max-width: 220px;
+  width: 240px;
+  max-width: 100%;
+  height: auto;
   border-radius: 1.75rem;
   box-shadow: 0 1rem 2.5rem rgba(64, 8, 8, .28);
 }
+
+.foto-escura { display: none; }
+
+[data-bs-theme="dark"] .foto-clara { display: none; }
+[data-bs-theme="dark"] .foto-escura { display: inline-block; }
 
 /* --------------------------- Titulo de secao ----------------------- */
 
@@ -341,5 +348,5 @@ header[id] {
   .h1 { font-size: 1.6rem; }
   .linha-tempo { padding-left: 1.25rem; }
   .item-tempo::before { left: -1.1rem; }
-  .foto-perfil { max-width: 150px; }
+  .foto-perfil { width: 160px; }
 }

@@ -92,12 +92,17 @@
       text-align: center;
     }
 
-    .monograma {
-      width: 5.5rem;
-      height: 5.5rem;
-      border-radius: 1.5rem;
+    .retrato {
+      width: 6rem;
+      height: auto;
+      border-radius: 1.25rem;
       box-shadow: var(--sombra);
     }
+
+    .retrato-escuro { display: none; }
+
+    [data-tema="dark"] .retrato-claro { display: none; }
+    [data-tema="dark"] .retrato-escuro { display: inline-block; }
 
     h1 {
       margin: 1.25rem 0 .5rem;
@@ -212,8 +217,10 @@
 
   <main>
     <div class="caixa">
-      <img class="monograma" src="bootstrap/assets/img/perfil.svg" width="88" height="88"
-           alt="Monograma com as iniciais de Gilson dos Santos Júnior">
+      <img class="retrato retrato-claro" src="bootstrap/assets/img/perfil-claro.png"
+           width="480" height="640" alt="Ilustração de perfil de Gilson dos Santos Júnior">
+      <img class="retrato retrato-escuro" src="bootstrap/assets/img/perfil-escuro.png"
+           width="480" height="640" alt="Ilustração de perfil de Gilson dos Santos Júnior">
 
       <h1>Gilson dos Santos Júnior</h1>
       <p class="subtitulo">

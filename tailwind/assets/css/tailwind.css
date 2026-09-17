@@ -714,8 +714,8 @@
         width: calc(var(--spacing) * 11)
     }
 
-    .w-36 {
-        width: calc(var(--spacing) * 36)
+    .w-40 {
+        width: calc(var(--spacing) * 40)
     }
 
     .w-\[35\%\] {
@@ -1313,8 +1313,8 @@
             display: inline
         }
 
-        .sm\:w-52 {
-            width: calc(var(--spacing) * 52)
+        .sm\:w-60 {
+            width: calc(var(--spacing) * 60)
         }
 
         .sm\:grid-cols-2 {
@@ -1384,6 +1384,14 @@
         .xl\:grid-cols-3 {
             grid-template-columns: repeat(3, minmax(0, 1fr))
         }
+    }
+
+    .dark\:block:where(.dark, .dark *) {
+        display: block
+    }
+
+    .dark\:hidden:where(.dark, .dark *) {
+        display: none
     }
 
     :where(.dark\:divide-base-700:where(.dark, .dark *)>:not(:last-child)) {
