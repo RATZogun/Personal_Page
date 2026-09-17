@@ -1,0 +1,15 @@
+{
+  "name": "personal-page",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pagina pessoal de Gilson dos Santos Junior, em duas versoes: Bootstrap e Tailwind CSS.",
+  "scripts": {
+    "build:css": "tailwindcss -i tailwind/src/input.css -o tailwind/assets/css/tailwind.css --minify",
+    "watch:css": "tailwindcss -i tailwind/src/input.css -o tailwind/assets/css/tailwind.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0",
+    "tailwindcss": "^4.1.0"
+  },
+  "license": "MIT"
+}

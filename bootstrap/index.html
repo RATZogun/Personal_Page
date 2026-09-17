@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gilson dos Santos Júnior | Desenvolvedor de Software</title>
+  <meta name="description" content="Página pessoal de Gilson dos Santos Júnior, estudante de Sistemas de Informação na UFLA e desenvolvedor de software full stack. Versão construída com Bootstrap.">
+  <meta name="author" content="Gilson dos Santos Júnior">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <script>
+    // Aplica o tema salvo antes da primeira pintura, para nao piscar.
+    (function () {
+      var salvo = null;
+      try { salvo = localStorage.getItem('tema'); } catch (e) { salvo = null; }
+      var prefereEscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-bs-theme', salvo || (prefereEscuro ? 'dark' : 'light'));
+    })();
+  </script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <a class="visually-hidden-focusable btn btn-primary position-absolute top-0 start-0 m-2" href="#sobre">Pular para o conteúdo</a>
+
+  <!-- ============================ NAVEGACAO ============================ -->
+  <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary border-bottom shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="#topo">
+        <span class="brand-mark">GJ</span>
+        Gilson Júnior
+      </a>
+
+      <div class="d-flex align-items-center order-lg-last">
+        <button class="btn btn-sm btn-outline-secondary btn-tema me-2" id="btn-tema" type="button"
+                aria-label="Alternar entre tema claro e tema escuro">
+          <i class="bi bi-moon-stars-fill" id="icone-tema" aria-hidden="true"></i>
+          <span class="d-none d-sm-inline ms-1" id="texto-tema">Escuro</span>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false" aria-label="Abrir o menu de navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto me-lg-3 mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#formacao">Formação</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experiencia">Experiência</a></li>
+          <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================== TOPO =============================== -->
+  <header id="topo" class="hero py-5">
+    <div class="container py-lg-4">
+      <div class="row align-items-center g-4 g-lg-5">
+        <div class="col-lg-8 order-lg-first order-last">
+          <p class="text-uppercase fw-semibold letra-espacada text-primary-emphasis mb-2">Desenvolvedor de software</p>
+          <h1 class="display-4 fw-bold mb-3">Gilson dos Santos Júnior</h1>
+          <p class="fs-5 text-body-secondary mb-4">
+            Full stack em .NET e React.js, com foco em APIs, integrações e sistemas distribuídos.
+            Graduando em Sistemas de Informação na Universidade Federal de Lavras.
+          </p>
+
+          <ul class="list-inline mb-4 text-body-secondary">
+            <li class="list-inline-item me-3"><i class="bi bi-geo-alt-fill text-primary me-2" aria-hidden="true"></i>Lavras, Minas Gerais</li>
+            <li class="list-inline-item me-3"><i class="bi bi-mortarboard-fill text-primary me-2" aria-hidden="true"></i>UFLA</li>
+            <li class="list-inline-item"><i class="bi bi-translate text-primary me-2" aria-hidden="true"></i>Português, inglês e francês</li>
+          </ul>
+
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-primary" href="#contato"><i class="bi bi-envelope-fill me-1" aria-hidden="true"></i>Entre em contato</a>
+            <a class="btn btn-outline-secondary" href="https://github.com/RATZogun" target="_blank" rel="noopener">
+              <i class="bi bi-github me-1" aria-hidden="true"></i>GitHub
+            </a>
+            <a class="btn btn-outline-secondary" href="https://www.linkedin.com/in/thegilson/" target="_blank" rel="noopener">
+              <i class="bi bi-linkedin me-1" aria-hidden="true"></i>LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 order-lg-last order-first text-center">
+          <img src="assets/img/perfil.svg" alt="Monograma com as iniciais de Gilson dos Santos Júnior" class="foto-perfil img-fluid" width="220" height="220">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================= SOBRE ============================= -->
+    <section id="sobre" class="py-5">
+      <div class="container">
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-7">
+            <h2 class="h1 fw-bold mb-4"><span class="numero-secao">01</span> Sobre mim</h2>
+            <p class="fs-5 text-body-secondary">
+              Trabalho com desenvolvimento de software desde 2023, sempre em sistemas corporativos
+              que precisam sustentar regras de negócio complexas sem perder confiabilidade.
+            </p>
+            <p>
+              Comecei em um projeto de gestão de indenizações, passei por sistemas de emissão de apólices
+              de seguro e hoje atuo em uma plataforma distribuída, orientada a eventos, formada por vários
+              serviços que conversam entre si. Esse caminho me ensinou que a parte difícil raramente é a
+              sintaxe: é entender a regra, modelar os dados e deixar o sistema previsível para quem vem depois.
+            </p>
+            <p>
+              Gosto de participar do ciclo inteiro, da modelagem de dados e da definição do contrato da API
+              até o teste automatizado, a revisão de código e a entrega em produção. Na universidade, além das
+              disciplinas do curso, atuo como Diretor de Assuntos Estudantis no CATI, o centro acadêmico do curso.
+            </p>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="card h-100 border-0 shadow-sm card-destaque">
+                  <div class="card-body">
+                    <p class="display-6 fw-bold text-primary mb-0">3+</p>
+                    <p class="text-body-secondary mb-0 small">anos de experiência profissional</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="card h-100 border-0 shadow-sm card-destaque">
+                  <div class="card-body">
+                    <p class="display-6 fw-bold text-primary mb-0">3</p>
+                    <p class="text-body-secondary mb-0 small">projetos corporativos entregues</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="card border-0 shadow-sm card-destaque">
+                  <div class="card-body">
+                    <h3 class="h6 text-uppercase letra-espacada text-body-secondary">Atuação principal</h3>
+                    <p class="mb-0">
+                      Back end em .NET e C#, front end em React.js, integração entre serviços com gRPC e
+                      mensageria com Kafka, persistência em PostgreSQL.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================== FORMACAO =========================== -->
+    <section id="formacao" class="py-5 bg-body-tertiary">
+      <div class="container">
+        <h2 class="h1 fw-bold mb-4"><span class="numero-secao">02</span> Formação</h2>
+
+        <div class="row g-4">
+          <div class="col-lg-7">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-2">
+                  <h3 class="h5 fw-bold mb-0">Bacharelado em Sistemas de Informação</h3>
+                  <span class="badge text-bg-primary">2021 a 2026</span>
+                </div>
+                <p class="text-body-secondary mb-3">
+                  <i class="bi bi-building me-1" aria-hidden="true"></i>Universidade Federal de Lavras, Lavras, Minas Gerais
+                </p>
+                <p class="mb-3">
+                  Curso em andamento, com ênfase em engenharia de software, banco de dados e desenvolvimento
+                  de sistemas. Entre as disciplinas mais relevantes para a minha atuação estão Engenharia de
+                  Software, Processos de Software, Gerência de Projetos de Software, Inteligência Artificial,
+                  Mineração de Dados, Complexidade e Projetos de Algoritmos e Programação Web.
+                </p>
+                <p class="mb-0">
+                  <span class="badge rounded-pill text-bg-secondary">
+                    <i class="bi bi-people-fill me-1" aria-hidden="true"></i>Diretor de Assuntos Estudantis no CATI
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body p-4">
+                <h3 class="h6 text-uppercase letra-espacada text-body-secondary mb-3">Idiomas</h3>
+
+                <div class="mb-3">
+                  <div class="d-flex justify-content-between small fw-semibold">
+                    <span>Português</span><span class="text-body-secondary">Nativo</span>
+                  </div>
+                  <div class="progress mt-1" role="progressbar" aria-label="Nível de português" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="height:.5rem">
+                    <div class="progress-bar" style="width:100%"></div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <div class="d-flex justify-content-between small fw-semibold">
+                    <span>Inglês</span><span class="text-body-secondary">Avançado</span>
+                  </div>
+                  <div class="progress mt-1" role="progressbar" aria-label="Nível de inglês" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="height:.5rem">
+                    <div class="progress-bar" style="width:85%"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="d-flex justify-content-between small fw-semibold">
+                    <span>Francês</span><span class="text-body-secondary">Básico</span>
+                  </div>
+                  <div class="progress mt-1" role="progressbar" aria-label="Nível de francês" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="height:.5rem">
+                    <div class="progress-bar" style="width:35%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== EXPERIENCIA ========================== -->
+    <section id="experiencia" class="py-5">
+      <div class="container">
+        <h2 class="h1 fw-bold mb-5"><span class="numero-secao">03</span> Experiência profissional</h2>
+
+        <div class="linha-tempo">
+
+          <article class="item-tempo">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-1">
+                  <h3 class="h5 fw-bold mb-0">Engenheiro de Software</h3>
+                  <span class="badge text-bg-primary">jun/2026 até o momento</span>
+                </div>
+                <p class="text-body-secondary mb-3">
+                  <i class="bi bi-briefcase-fill me-1" aria-hidden="true"></i>Meerkat, Lavras, Minas Gerais, trabalho remoto
+                </p>
+                <p>
+                  Desenvolvimento de uma plataforma corporativa distribuída, composta por vários serviços e
+                  aplicações, com arquitetura orientada a eventos e integração entre tecnologias e linguagens
+                  diferentes. Participo do ciclo completo, da modelagem de dados e da definição dos contratos
+                  de API até o teste automatizado, a revisão de código e a entrega em produção.
+                </p>
+                <ul class="lista-atividades mb-3">
+                  <li>Serviços em .NET e C# nas camadas de domínio, persistência e agregação de dados, além de serviços complementares em Python.</li>
+                  <li>Integração entre serviços com gRPC e mensageria assíncrona com Kafka, usando contratos versionados.</li>
+                  <li>Persistência com PostgreSQL e Entity Framework Core, com autenticação e autorização por papéis via Keycloak e JWT em ambiente multi-tenant.</li>
+                  <li>Investigação de incidentes em produção, incluindo problemas de concorrência, consistência e integridade de dados entre serviços.</li>
+                  <li>Automação de qualidade de código, pipelines de CI e CD com GitHub Actions e conteinerização com Docker.</li>
+                </ul>
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="badge rounded-pill text-bg-secondary">.NET</span>
+                  <span class="badge rounded-pill text-bg-secondary">C#</span>
+                  <span class="badge rounded-pill text-bg-secondary">Python</span>
+                  <span class="badge rounded-pill text-bg-secondary">gRPC</span>
+                  <span class="badge rounded-pill text-bg-secondary">Kafka</span>
+                  <span class="badge rounded-pill text-bg-secondary">PostgreSQL</span>
+                  <span class="badge rounded-pill text-bg-secondary">Docker</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="item-tempo">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-1">
+                  <h3 class="h5 fw-bold mb-0">Analista de Desenvolvimento de Sistemas</h3>
+                  <span class="badge text-bg-secondary">ago/2025 a mai/2026</span>
+                </div>
+                <p class="text-body-secondary mb-3">
+                  <i class="bi bi-briefcase-fill me-1" aria-hidden="true"></i>Squadra Digital, projeto no setor de seguros
+                </p>
+                <p>
+                  Desenvolvimento, evolução e manutenção de sistemas voltados à automação dos processos de
+                  emissão e gestão de apólices de seguro.
+                </p>
+                <ul class="lista-atividades mb-3">
+                  <li>Funcionalidades de emissão, renovação e endosso de apólices.</li>
+                  <li>Implementação e evolução de integrações entre sistemas corporativos.</li>
+                  <li>Atuação full stack com C# e .NET no back end e React.js no front end.</li>
+                  <li>Correção e prevenção de defeitos, além de melhorias evolutivas e otimizações de desempenho.</li>
+                  <li>Participação em refinamentos e alinhamentos técnicos com as equipes de negócio e de desenvolvimento.</li>
+                </ul>
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="badge rounded-pill text-bg-secondary">C#</span>
+                  <span class="badge rounded-pill text-bg-secondary">ASP.NET</span>
+                  <span class="badge rounded-pill text-bg-secondary">React.js</span>
+                  <span class="badge rounded-pill text-bg-secondary">SQL</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="item-tempo">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-1">
+                  <h3 class="h5 fw-bold mb-0">Analista de Desenvolvimento de Sistemas</h3>
+                  <span class="badge text-bg-secondary">fev/2023 a nov/2024</span>
+                </div>
+                <p class="text-body-secondary mb-3">
+                  <i class="bi bi-briefcase-fill me-1" aria-hidden="true"></i>Squadra Digital, alocado na Fundação Renova
+                </p>
+                <p>
+                  Atuação no projeto SPA, o sistema PIM e AFE de gestão de indenizações relacionadas ao
+                  rompimento da barragem de Fundão.
+                </p>
+                <ul class="lista-atividades mb-3">
+                  <li>Desenvolvimento e manutenção de APIs REST e das regras de negócio dos fluxos de indenização.</li>
+                  <li>Entrega de funcionalidades full stack com React.js e .NET.</li>
+                  <li>Análise de viabilidade técnica das demandas e suporte às integrações com sistemas internos.</li>
+                  <li>Colaboração com equipe multidisciplinar na definição das soluções.</li>
+                </ul>
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="badge rounded-pill text-bg-secondary">C#</span>
+                  <span class="badge rounded-pill text-bg-secondary">ASP.NET</span>
+                  <span class="badge rounded-pill text-bg-secondary">React.js</span>
+                  <span class="badge rounded-pill text-bg-secondary">SQL Server</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== HABILIDADES ========================== -->
+    <section id="habilidades" class="py-5 bg-body-tertiary">
+      <div class="container">
+        <h2 class="h1 fw-bold mb-4"><span class="numero-secao">04</span> Habilidades técnicas</h2>
+        <p class="text-body-secondary mb-5 col-lg-8">
+          Tecnologias que uso no dia a dia, agrupadas pelo papel que cumprem em um sistema.
+        </p>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="icone-area mb-3"><i class="bi bi-hdd-stack-fill" aria-hidden="true"></i></div>
+                <h3 class="h5 fw-bold">Back end</h3>
+                <p class="text-body-secondary small">Onde ficam as regras de negócio e os contratos de API.</p>
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="badge rounded-pill text-bg-primary">C#</span>
+                  <span class="badge rounded-pill text-bg-primary">.NET</span>
+                  <span class="badge rounded-pill text-bg-primary">ASP.NET</span>
+                  <span class="badge rounded-pill text-bg-primary">Java</span>
+                  <span class="badge rounded-pill text-bg-primary">Spring Boot</span>
+                  <span class="badge rounded-pill text-bg-primary">Python</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="icone-area mb-3"><i class="bi bi-window-sidebar" aria-hidden="true"></i></div>
+                <h3 class="h5 fw-bold">Front end</h3>
+                <p class="text-body-secondary small">A interface que o usuário final realmente enxerga.</p>
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="badge rounded-pill text-bg-primary">JavaScript</span>
+                  <span class="badge rounded-pill text-bg-primary">TypeScript</span>
+                  <span class="badge rounded-pill text-bg-primary">React.js</span>
+                  <span class="badge rounded-pill text-bg-primary">HTML5</span>
+                  <span class="badge rounded-pill text-bg-primary">CSS3</span>
+                  <span class="badge rounded-pill text-bg-primary">Bootstrap</span>
+                  <span class="badge rounded-pill text-bg-primary">Tailwind CSS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="icone-area mb-3"><i class="bi bi-database-fill" aria-hidden="true"></i></div>
+                <h3 class="h5 fw-bold">Dados</h3>
+                <p class="text-body-secondary small">Modelagem, consulta e persistência.</p>
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="badge rounded-pill text-bg-primary">PostgreSQL</span>
+                  <span class="badge rounded-pill text-bg-primary">SQL Server</span>
+                  <span class="badge rounded-pill text-bg-primary">MySQL</span>
+                  <span class="badge rounded-pill text-bg-primary">Entity Framework Core</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="icone-area mb-3"><i class="bi bi-diagram-3-fill" aria-hidden="true"></i></div>
+                <h3 class="h5 fw-bold">Integração</h3>
+                <p class="text-body-secondary small">Como os serviços conversam entre si.</p>
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="badge rounded-pill text-bg-primary">REST</span>
+                  <span class="badge rounded-pill text-bg-primary">gRPC</span>
+                  <span class="badge rounded-pill text-bg-primary">Kafka</span>
+                  <span class="badge rounded-pill text-bg-primary">JSON</span>
+                  <span class="badge rounded-pill text-bg-primary">Keycloak e JWT</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="icone-area mb-3"><i class="bi bi-gear-wide-connected" aria-hidden="true"></i></div>
+                <h3 class="h5 fw-bold">Infraestrutura</h3>
+                <p class="text-body-secondary small">Empacotamento, automação e entrega.</p>
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="badge rounded-pill text-bg-primary">Docker</span>
+                  <span class="badge rounded-pill text-bg-primary">GitHub Actions</span>
+                  <span class="badge rounded-pill text-bg-primary">Git</span>
+                  <span class="badge rounded-pill text-bg-primary">AWS (fundamentos)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="icone-area mb-3"><i class="bi bi-kanban-fill" aria-hidden="true"></i></div>
+                <h3 class="h5 fw-bold">Processo</h3>
+                <p class="text-body-secondary small">Práticas de equipe que sustentam a entrega.</p>
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="badge rounded-pill text-bg-primary">Scrum</span>
+                  <span class="badge rounded-pill text-bg-primary">Revisão de código</span>
+                  <span class="badge rounded-pill text-bg-primary">Testes automatizados</span>
+                  <span class="badge rounded-pill text-bg-primary">Modelagem de dados</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CONTATO ============================ -->
+    <section id="contato" class="py-5">
+      <div class="container">
+        <div class="row g-4 g-lg-5 align-items-center">
+          <div class="col-lg-5">
+            <h2 class="h1 fw-bold mb-3"><span class="numero-secao">05</span> Contato</h2>
+            <p class="fs-5 text-body-secondary mb-0">
+              Estou aberto a conversas sobre desenvolvimento de software, estágios e oportunidades.
+              Respondo mais rápido por e-mail ou LinkedIn.
+            </p>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="list-group list-group-flush">
+              <a class="list-group-item list-group-item-action d-flex align-items-center gap-3 py-3" href="mailto:gdsjunior8@gmail.com">
+                <i class="bi bi-envelope-fill fs-4 text-primary" aria-hidden="true"></i>
+                <span><span class="d-block small text-body-secondary">E-mail</span><span class="fw-semibold">gdsjunior8@gmail.com</span></span>
+              </a>
+              <a class="list-group-item list-group-item-action d-flex align-items-center gap-3 py-3" href="tel:+5535997434278">
+                <i class="bi bi-telephone-fill fs-4 text-primary" aria-hidden="true"></i>
+                <span><span class="d-block small text-body-secondary">Telefone</span><span class="fw-semibold">(35) 9 9743-4278</span></span>
+              </a>
+              <a class="list-group-item list-group-item-action d-flex align-items-center gap-3 py-3" href="https://www.linkedin.com/in/thegilson/" target="_blank" rel="noopener">
+                <i class="bi bi-linkedin fs-4 text-primary" aria-hidden="true"></i>
+                <span><span class="d-block small text-body-secondary">LinkedIn</span><span class="fw-semibold">linkedin.com/in/thegilson</span></span>
+              </a>
+              <a class="list-group-item list-group-item-action d-flex align-items-center gap-3 py-3" href="https://github.com/RATZogun" target="_blank" rel="noopener">
+                <i class="bi bi-github fs-4 text-primary" aria-hidden="true"></i>
+                <span><span class="d-block small text-body-secondary">GitHub</span><span class="fw-semibold">github.com/RATZogun</span></span>
+              </a>
+              <div class="list-group-item d-flex align-items-center gap-3 py-3">
+                <i class="bi bi-geo-alt-fill fs-4 text-primary" aria-hidden="true"></i>
+                <span><span class="d-block small text-body-secondary">Localização</span><span class="fw-semibold">Lavras, Minas Gerais, Brasil</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================= RODAPE ============================= -->
+  <footer class="py-4 bg-body-tertiary border-top">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 text-body-secondary small">
+        <p class="mb-0">Gilson dos Santos Júnior, 2026. Versão construída com Bootstrap 5.</p>
+        <p class="mb-0"><a class="link-secondary text-decoration-none" href="../index.html"><i class="bi bi-arrow-left-short" aria-hidden="true"></i>Voltar e ver a versão em Tailwind CSS</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

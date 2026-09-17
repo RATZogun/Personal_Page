@@ -1,0 +1,345 @@
+/* =====================================================================
+   Pagina pessoal, versao Bootstrap
+   Gilson dos Santos Junior
+
+   O Bootstrap ja resolve grade, componentes e a mecanica dos dois temas.
+   Este arquivo faz duas coisas: troca a paleta padrao do framework pela
+   paleta do projeto, redefinindo as variaveis --bs-*, e cuida do que e
+   proprio desta pagina (monograma, linha do tempo, titulos de secao).
+
+   Paleta do projeto
+     #BF7950  cobre claro    acento do tema escuro
+     #A65E44  terracota      acento do tema claro
+     #0D0302  quase preto    fundo do tema escuro
+     #591812  vinho          pilulas e realces do tema escuro
+     #400808  vinho escuro   brilho do topo no tema escuro
+
+   Os neutros claros (#FAF4F0, #F3E7E0, #E6D4C9) sao derivados da mesma
+   familia quente, para que o tema claro nao fique cinza ao lado deles.
+   ===================================================================== */
+
+/* Nota sobre o acento: #A65E44 sobre o creme claro do tema (#FAF4F0) da
+   razao de contraste 4,44, logo abaixo dos 4,5 que o WCAG AA exige para
+   texto normal. Por isso o acento tem dois tons: --gj-acento para
+   preenchimentos e icones, e --gj-acento-txt, um passo mais escuro, para
+   texto pequeno. No tema escuro a relacao se inverte e o tom de texto e
+   o mais claro. */
+
+/* -------------------------------------------------------------------
+   Tema claro
+   ------------------------------------------------------------------- */
+
+:root,
+[data-bs-theme="light"] {
+  --gj-acento: #A65E44;
+  --gj-acento-txt: #8C4A34;
+  --gj-acento-forte: #591812;
+  --gj-sobre-acento: #ffffff;
+  --gj-acento-suave: rgba(166, 94, 68, .10);
+  --gj-pilula-bg: #F3E7E0;
+  --gj-pilula-txt: #591812;
+  --gj-fundo-topo: linear-gradient(180deg, #F3E7E0 0%, transparent 100%);
+
+  --bs-body-bg: #ffffff;
+  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-body-color: #1C0A09;
+  --bs-body-color-rgb: 28, 10, 9;
+  --bs-secondary-color: #6B4A3E;
+  --bs-tertiary-bg: #FAF4F0;
+  --bs-tertiary-bg-rgb: 250, 244, 240;
+  --bs-border-color: #E6D4C9;
+  --bs-primary: #A65E44;
+  --bs-primary-rgb: 166, 94, 68;
+  --bs-primary-text-emphasis: #8C4A34;
+  --bs-link-color-rgb: 166, 94, 68;
+  --bs-link-hover-color-rgb: 89, 24, 18;
+}
+
+/* -------------------------------------------------------------------
+   Tema escuro
+   ------------------------------------------------------------------- */
+
+[data-bs-theme="dark"] {
+  --gj-acento: #BF7950;
+  --gj-acento-txt: #D9A182;
+  --gj-acento-forte: #D9A182;
+  --gj-sobre-acento: #0D0302;
+  --gj-acento-suave: rgba(191, 121, 80, .16);
+  --gj-pilula-bg: #591812;
+  --gj-pilula-txt: #E6D4C9;
+  --gj-fundo-topo: linear-gradient(180deg, rgba(64, 8, 8, .55) 0%, transparent 100%);
+
+  --bs-body-bg: #0D0302;
+  --bs-body-bg-rgb: 13, 3, 2;
+  --bs-body-color: #E6D4C9;
+  --bs-body-color-rgb: 230, 212, 201;
+  --bs-secondary-color: #A88374;
+  --bs-tertiary-bg: #160706;
+  --bs-tertiary-bg-rgb: 22, 7, 6;
+  --bs-border-color: #3D1B16;
+  --bs-primary: #BF7950;
+  --bs-primary-rgb: 191, 121, 80;
+  --bs-primary-text-emphasis: #D9A182;
+  --bs-link-color-rgb: 191, 121, 80;
+  --bs-link-hover-color-rgb: 217, 161, 130;
+  --bs-emphasis-color: #FBF2EC;
+  --bs-emphasis-color-rgb: 251, 242, 236;
+  --bs-heading-color: #FBF2EC;
+}
+
+[data-bs-theme="dark"] .card,
+[data-bs-theme="dark"] .list-group-item {
+  background-color: #1C0A09;
+}
+
+/* -------------------------------------------------------------------
+   Componentes que o Bootstrap compila com cor fixa e por isso nao
+   acompanham as variaveis acima.
+   ------------------------------------------------------------------- */
+
+.btn-primary {
+  --bs-btn-bg: var(--gj-acento);
+  --bs-btn-border-color: var(--gj-acento);
+  --bs-btn-color: var(--gj-sobre-acento);
+  --bs-btn-hover-bg: var(--gj-acento-forte);
+  --bs-btn-hover-border-color: var(--gj-acento-forte);
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-active-bg: var(--gj-acento-forte);
+  --bs-btn-active-border-color: var(--gj-acento-forte);
+  --bs-btn-active-color: #ffffff;
+}
+
+[data-bs-theme="dark"] .btn-primary {
+  --bs-btn-hover-bg: #D9A182;
+  --bs-btn-hover-border-color: #D9A182;
+  --bs-btn-hover-color: #0D0302;
+  --bs-btn-active-bg: #D9A182;
+  --bs-btn-active-color: #0D0302;
+}
+
+.btn-outline-secondary {
+  --bs-btn-color: #6B4A3E;
+  --bs-btn-border-color: #D3B9A9;
+  --bs-btn-hover-bg: #F3E7E0;
+  --bs-btn-hover-border-color: #C9A491;
+  --bs-btn-hover-color: #591812;
+  --bs-btn-active-bg: #E6D4C9;
+  --bs-btn-active-border-color: #C9A491;
+  --bs-btn-active-color: #591812;
+}
+
+[data-bs-theme="dark"] .btn-outline-secondary {
+  --bs-btn-color: #C4A396;
+  --bs-btn-border-color: #3D1B16;
+  --bs-btn-hover-bg: #1C0A09;
+  --bs-btn-hover-border-color: #591812;
+  --bs-btn-hover-color: #F3E7E0;
+  --bs-btn-active-bg: #241009;
+  --bs-btn-active-color: #F3E7E0;
+}
+
+.text-bg-primary {
+  background-color: var(--gj-acento) !important;
+  color: var(--gj-sobre-acento) !important;
+}
+
+.text-bg-secondary {
+  background-color: var(--gj-pilula-bg) !important;
+  color: var(--gj-pilula-txt) !important;
+}
+
+.progress {
+  --bs-progress-bg: #E6D4C9;
+  --bs-progress-bar-bg: var(--gj-acento);
+}
+
+[data-bs-theme="dark"] .progress {
+  --bs-progress-bg: #2E120E;
+}
+
+.list-group {
+  --bs-list-group-action-hover-bg: #FAF4F0;
+  --bs-list-group-action-hover-color: #591812;
+  --bs-list-group-border-color: #E6D4C9;
+}
+
+[data-bs-theme="dark"] .list-group {
+  --bs-list-group-action-hover-bg: #241009;
+  --bs-list-group-action-hover-color: #F3E7E0;
+  --bs-list-group-border-color: #3D1B16;
+}
+
+/* O .link-secondary do rodape usa a cor secundaria do Bootstrap, que
+   fica escura demais sobre o fundo escuro. Definimos a cor na mao. */
+.link-secondary {
+  color: var(--bs-secondary-color) !important;
+}
+
+.link-secondary:hover,
+.link-secondary:focus {
+  color: var(--gj-acento) !important;
+}
+
+/* -------------------------------------------------------------------
+   Estilos proprios desta pagina
+   ------------------------------------------------------------------- */
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Compensa a altura da barra fixa ao navegar pelas ancoras. */
+section[id],
+header[id] {
+  scroll-margin-top: 5rem;
+}
+
+.letra-espacada {
+  letter-spacing: .12em;
+  font-size: .8rem;
+}
+
+/* ------------------------------ Marca ------------------------------ */
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin-right: .35rem;
+  border-radius: .5rem;
+  background: var(--gj-acento);
+  color: var(--gj-sobre-acento);
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+.btn-tema {
+  min-width: 2.4rem;
+}
+
+/* ------------------------------- Topo ------------------------------ */
+
+.hero {
+  background-image: var(--gj-fundo-topo);
+}
+
+.foto-perfil {
+  max-width: 220px;
+  border-radius: 1.75rem;
+  box-shadow: 0 1rem 2.5rem rgba(64, 8, 8, .28);
+}
+
+/* --------------------------- Titulo de secao ----------------------- */
+
+.numero-secao {
+  display: inline-block;
+  margin-right: .5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  vertical-align: middle;
+  color: var(--gj-acento-txt);
+  font-variant-numeric: tabular-nums;
+}
+
+.card-destaque {
+  background-color: var(--gj-acento-suave) !important;
+}
+
+/* ----------------------------- Habilidades ------------------------- */
+
+.icone-area {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: .875rem;
+  background: var(--gj-acento-suave);
+  color: var(--gj-acento);
+  font-size: 1.35rem;
+}
+
+/* ------------------------- Linha do tempo -------------------------- */
+
+.linha-tempo {
+  position: relative;
+  padding-left: 1.75rem;
+}
+
+.linha-tempo::before {
+  content: "";
+  position: absolute;
+  top: .5rem;
+  bottom: .5rem;
+  left: .4rem;
+  width: 2px;
+  background: var(--bs-border-color);
+}
+
+.item-tempo {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.item-tempo:last-child {
+  margin-bottom: 0;
+}
+
+.item-tempo::before {
+  content: "";
+  position: absolute;
+  top: 1.75rem;
+  left: -1.55rem;
+  width: .8rem;
+  height: .8rem;
+  border-radius: 50%;
+  background: var(--gj-acento);
+  box-shadow: 0 0 0 4px var(--gj-acento-suave);
+}
+
+.lista-atividades {
+  padding-left: 1.1rem;
+  margin-bottom: 0;
+}
+
+.lista-atividades li {
+  margin-bottom: .35rem;
+}
+
+.lista-atividades li::marker {
+  color: var(--gj-acento);
+}
+
+/* ---------------------------- Transicoes --------------------------- */
+
+.card,
+.btn,
+.list-group-item {
+  transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 .75rem 1.75rem rgba(64, 8, 8, .16) !important;
+}
+
+/* Respeita quem pediu menos animacao no sistema. */
+@media (prefers-reduced-motion: reduce) {
+  body { scroll-behavior: auto; }
+  .card, .btn, .list-group-item { transition: none; }
+  .card:hover { transform: none; }
+}
+
+/* ------------------------- Ajustes de tela ------------------------- */
+
+@media (max-width: 575.98px) {
+  .display-4 { font-size: 2.1rem; }
+  .h1 { font-size: 1.6rem; }
+  .linha-tempo { padding-left: 1.25rem; }
+  .item-tempo::before { left: -1.1rem; }
+  .foto-perfil { max-width: 150px; }
+}

@@ -1,0 +1,116 @@
+/* =====================================================================
+   Pagina pessoal, versao Tailwind CSS
+   Gilson dos Santos Junior
+
+   Este e o arquivo FONTE. O CSS que a pagina carrega e o
+   assets/css/tailwind.css, gerado a partir daqui pelo Tailwind CLI:
+
+       npx @tailwindcss/cli -i src/input.css -o assets/css/tailwind.css --minify
+
+   Gerar o CSS em vez de usar o CDN deixa a pagina sem dependencia de
+   compilacao no navegador e sem o piscar de conteudo sem estilo.
+   ===================================================================== */
+
+@import "tailwindcss";
+
+/* Arquivos varridos para descobrir quais classes entram no CSS final. */
+@source "../index.html";
+@source "../assets/js";
+
+/* Tema escuro controlado pela classe .dark no elemento html, em vez de
+   depender apenas da preferencia do sistema operacional. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------------------------------------------------------------------
+   Paleta do projeto.
+
+   Cores escolhidas:
+     #BF7950  cobre claro    marca-400, acento do tema escuro
+     #A65E44  terracota      marca-500, acento do tema claro
+     #0D0302  quase preto    base-900, fundo do tema escuro
+     #591812  vinho          marca-700, realces do tema escuro
+     #400808  vinho escuro   marca-800, brilho do topo
+
+   Os demais tons sao derivados da mesma familia quente, para que os
+   neutros nao puxem para o cinza azulado ao lado das cores acima.
+   Declarar as escalas aqui faz o Tailwind gerar classes como
+   bg-base-900 e text-marca-500 exatamente como as nativas.
+   --------------------------------------------------------------------- */
+
+@theme {
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Neutros quentes, do mais claro ao mais escuro. */
+  --color-base-50:  #FAF4F0;
+  --color-base-100: #F3E7E0;
+  --color-base-200: #E6D4C9;
+  --color-base-300: #D3B9A9;
+  --color-base-400: #A88374;
+  --color-base-500: #8A6355;
+  --color-base-600: #6B4A3E;
+  --color-base-700: #3D1B16;
+  --color-base-800: #1C0A09;
+  --color-base-900: #0D0302;
+
+  /* Cores de marca. */
+  --color-marca-300: #D9A182;
+  --color-marca-400: #BF7950;
+  --color-marca-500: #A65E44;
+  --color-marca-600: #8C4A34;
+  --color-marca-700: #591812;
+  --color-marca-800: #400808;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+}
+
+@layer components {
+  /* Linha vertical da secao de experiencia, com o marcador de cada item. */
+  .linha-tempo {
+    position: relative;
+    padding-left: 1.75rem;
+  }
+
+  .linha-tempo::before {
+    content: "";
+    position: absolute;
+    top: .5rem;
+    bottom: .5rem;
+    left: .4rem;
+    width: 2px;
+    background-color: var(--color-base-200);
+  }
+
+  .dark .linha-tempo::before {
+    background-color: var(--color-base-700);
+  }
+
+  .item-tempo::before {
+    content: "";
+    position: absolute;
+    top: 1.75rem;
+    left: -1.55rem;
+    width: .8rem;
+    height: .8rem;
+    border-radius: 9999px;
+    background-color: var(--color-marca-500);
+    box-shadow: 0 0 0 4px color-mix(in oklab, var(--color-marca-500) 14%, transparent);
+  }
+
+  .dark .item-tempo::before {
+    background-color: var(--color-marca-400);
+    box-shadow: 0 0 0 4px color-mix(in oklab, var(--color-marca-400) 18%, transparent);
+  }
+
+  @media (width < 36rem) {
+    .linha-tempo { padding-left: 1.25rem; }
+    .item-tempo::before { left: -1.1rem; }
+  }
+}
