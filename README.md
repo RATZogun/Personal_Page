@@ -79,14 +79,14 @@ Personal_Page/
 │   └── assets/
 │       ├── css/style.css           Ajustes próprios sobre o Bootstrap
 │       ├── js/main.js              Tema, menu e destaque da seção
-│       └── img/                    Monograma e favicon
+│       └── img/                    Retratos de cada tema e favicon
 ├── tailwind/
 │   ├── index.html                  Versão construída com Tailwind CSS 4
 │   ├── src/input.css               Fonte do Tailwind, com o tema e os componentes
 │   └── assets/
 │       ├── css/tailwind.css        CSS gerado pelo Tailwind CLI
 │       ├── js/main.js              Tema, menu e destaque da seção
-│       └── img/                    Monograma e favicon
+│       └── img/                    Retratos de cada tema e favicon
 ├── package.json                    Scripts para gerar o CSS do Tailwind
 ├── LICENSE                         Licença MIT
 └── README.md
