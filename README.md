@@ -15,7 +15,9 @@ uma construída com **Bootstrap 5** e outra com **Tailwind CSS 4**.
 
 A página apresenta informações reais do autor: um resumo pessoal, a formação em
 Sistemas de Informação na UFLA, o histórico profissional em desenvolvimento de
-software e a lista de tecnologias com que trabalha, além dos canais de contato.
+software, a atuação em liderança e comunidade (Embaixador Estudantil do Google 2026
+e diretoria do centro acadêmico) e a lista de tecnologias com que trabalha, além dos
+canais de contato.
 
 O objetivo da atividade é comparar dois frameworks CSS resolvendo o mesmo problema.
 Por isso o conteúdo, a ordem das seções e o comportamento são idênticos nas duas
