@@ -324,22 +324,15 @@ header[id] {
 
 /* ---------------------------- Transicoes --------------------------- */
 
-.card,
 .btn,
 .list-group-item {
-  transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
-}
-
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 .75rem 1.75rem rgba(64, 8, 8, .16) !important;
+  transition: background-color .18s ease;
 }
 
 /* Respeita quem pediu menos animacao no sistema. */
 @media (prefers-reduced-motion: reduce) {
   body { scroll-behavior: auto; }
-  .card, .btn, .list-group-item { transition: none; }
-  .card:hover { transform: none; }
+  .btn, .list-group-item { transition: none; }
 }
 
 /* ------------------------- Ajustes de tela ------------------------- */
