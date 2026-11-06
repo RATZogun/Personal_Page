@@ -27,7 +27,7 @@
    Cores escolhidas:
      #BF7950  cobre claro    marca-400, acento do tema escuro
      #A65E44  terracota      marca-500, acento do tema claro
-     #0D0302  quase preto    base-900, fundo do tema escuro
+     #0D0302  quase preto    base-900 (no tema escuro vira #000000)
      #591812  vinho          marca-700, realces do tema escuro
      #400808  vinho escuro   marca-800, brilho do topo
 
@@ -64,6 +64,11 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+  }
+
+  .dark {
+    --color-base-900: #000000;
+    --color-base-800: #0B0504;
   }
 
   @media (prefers-reduced-motion: reduce) {

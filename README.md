@@ -41,7 +41,8 @@ O projeto usa uma paleta quente, aplicada igualmente nas duas versões.
 | --- | --- |
 | `#BF7950` | Acento do tema escuro: botões, ícones, marcadores da linha do tempo |
 | `#A65E44` | Acento do tema claro, e o preenchimento dos botões principais |
-| `#0D0302` | Fundo do tema escuro |
+| `#000000` | Fundo do tema escuro, preto puro (AMOLED): em telas OLED os pixels ficam apagados |
+| `#0B0504` | Cartões do tema escuro, um quase preto quente que se destaca do fundo |
 | `#591812` | Pílulas de tecnologia e realces do tema escuro |
 | `#400808` | Brilho do topo no tema escuro, e as sombras |
 

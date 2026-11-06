@@ -10,7 +10,8 @@
    Paleta do projeto
      #BF7950  cobre claro    acento do tema escuro
      #A65E44  terracota      acento do tema claro
-     #0D0302  quase preto    fundo do tema escuro
+     #000000  preto puro     fundo do tema escuro
+     #0B0504  quase preto    cartoes do tema escuro
      #591812  vinho          pilulas e realces do tema escuro
      #400808  vinho escuro   brilho do topo no tema escuro
 
@@ -63,19 +64,19 @@
   --gj-acento: #BF7950;
   --gj-acento-txt: #D9A182;
   --gj-acento-forte: #D9A182;
-  --gj-sobre-acento: #0D0302;
+  --gj-sobre-acento: #000000;
   --gj-acento-suave: rgba(191, 121, 80, .16);
   --gj-pilula-bg: #591812;
   --gj-pilula-txt: #E6D4C9;
   --gj-fundo-topo: linear-gradient(180deg, rgba(64, 8, 8, .55) 0%, transparent 100%);
 
-  --bs-body-bg: #0D0302;
-  --bs-body-bg-rgb: 13, 3, 2;
+  --bs-body-bg: #000000;
+  --bs-body-bg-rgb: 0, 0, 0;
   --bs-body-color: #E6D4C9;
   --bs-body-color-rgb: 230, 212, 201;
   --bs-secondary-color: #A88374;
-  --bs-tertiary-bg: #160706;
-  --bs-tertiary-bg-rgb: 22, 7, 6;
+  --bs-tertiary-bg: #000000;
+  --bs-tertiary-bg-rgb: 0, 0, 0;
   --bs-border-color: #3D1B16;
   --bs-primary: #BF7950;
   --bs-primary-rgb: 191, 121, 80;
@@ -89,7 +90,7 @@
 
 [data-bs-theme="dark"] .card,
 [data-bs-theme="dark"] .list-group-item {
-  background-color: #1C0A09;
+  background-color: #0B0504;
 }
 
 /* -------------------------------------------------------------------
@@ -112,9 +113,9 @@
 [data-bs-theme="dark"] .btn-primary {
   --bs-btn-hover-bg: #D9A182;
   --bs-btn-hover-border-color: #D9A182;
-  --bs-btn-hover-color: #0D0302;
+  --bs-btn-hover-color: #000000;
   --bs-btn-active-bg: #D9A182;
-  --bs-btn-active-color: #0D0302;
+  --bs-btn-active-color: #000000;
 }
 
 .btn-outline-secondary {
@@ -131,10 +132,10 @@
 [data-bs-theme="dark"] .btn-outline-secondary {
   --bs-btn-color: #C4A396;
   --bs-btn-border-color: #3D1B16;
-  --bs-btn-hover-bg: #1C0A09;
+  --bs-btn-hover-bg: #140806;
   --bs-btn-hover-border-color: #591812;
   --bs-btn-hover-color: #F3E7E0;
-  --bs-btn-active-bg: #241009;
+  --bs-btn-active-bg: #1F0B08;
   --bs-btn-active-color: #F3E7E0;
 }
 
@@ -154,7 +155,7 @@
 }
 
 [data-bs-theme="dark"] .progress {
-  --bs-progress-bg: #2E120E;
+  --bs-progress-bg: #1F0B08;
 }
 
 .list-group {
@@ -164,7 +165,7 @@
 }
 
 [data-bs-theme="dark"] .list-group {
-  --bs-list-group-action-hover-bg: #241009;
+  --bs-list-group-action-hover-bg: #140806;
   --bs-list-group-action-hover-color: #F3E7E0;
   --bs-list-group-border-color: #3D1B16;
 }
